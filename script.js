@@ -28,21 +28,29 @@ document.addEventListener('DOMContentLoaded', () => {
         const password = document.getElementById('regPassword').value;
         const confirmPassword = document.getElementById('regConfirmPassword').value;
 
-        // Basic Password Matching Validation
+        // Mobile Number Validation Pattern (Exactly 10 Digits)
+        const phoneRegex = /^[0-9]{10}$/;
+        if (!phoneRegex.test(mobile)) {
+            alert("Please enter a valid 10-digit mobile number containing only numbers.");
+            return;
+        }
+
+        // Password Length Check (Minimum 8 Characters)
+        if (password.length < 8) {
+            alert("Password must be at least 8 characters long.");
+            return;
+        }
+
+        // Password Matching Check
         if (password !== confirmPassword) {
             alert("Passwords do not match!");
             return;
         }
 
-        // Mobile validation example (Basic length check)
-        if (mobile.length < 10) {
-            alert("Please enter a valid mobile number.");
-            return;
-        }
-
-        // Success simulation
+        // Success Action
         alert(`Registration successful for ${name}!`);
         registerForm.reset();
+        
         // Switch to login after registration
         registerForm.classList.add('hidden');
         loginForm.classList.remove('hidden');
@@ -56,7 +64,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const password = document.getElementById('loginPassword').value;
 
         // Success simulation
-        alert(`Logging in with: ${userCredential}`);
-        // Here you would typically handle the backend API call
+        alert(`Logging in to PowerPulse with: ${userCredential}`);
     });
 });
