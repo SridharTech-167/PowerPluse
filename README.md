@@ -1,24 +1,46 @@
-# ⚡ PowerPulse
+⚡ PowerPulse
 
-PowerPulse is a web application designed to provide users with information about power outages in their area, including the reason for the outage and the estimated restoration time.
+PowerPulse is a web application designed to help users stay informed about power outages in their area. The application will provide information such as the reason for a power cut and the estimated restoration time.
 
-## 🚧 Current Progress
+🚧 Current Progress
 
-- [x] Login Page
-- [x] Registration Page
-- [x] Form Switching
-- [x] Basic Form Validation
+Authentication UI
 
-## 🛠️ Technologies Used
+- [x] PowerPulse branding
+- [x] Login page
+- [x] Registration page
+- [x] Login/Register form switching
+- [x] Floating label input design
+- [x] 10-digit mobile number validation
+- [x] Minimum 8-character password validation
+- [x] Confirm password validation
+- [x] Basic form submission handling
 
-- HTML
-- CSS
+🛠️ Technologies Used
+
+- HTML5
+- CSS3
 - JavaScript
 
-## 📌 Future Plans
+📌 Upcoming Features
 
-- User authentication
-- Database integration
-- Power outage information
-- Area-based outage updates
-- Estimated power restoration time
+- [ ] Backend integration
+- [ ] Database integration
+- [ ] User authentication
+- [ ] User dashboard
+- [ ] Power outage information
+- [ ] Area-based outage updates
+- [ ] Estimated power restoration time
+
+📁 Project Structure
+
+PowerPulse/
+│
+├── index.html
+├── style.css
+├── script.js
+└── README.md
+
+🎯 Project Goal
+
+To provide users with clear and timely information about power outages, including the reason for the outage and the estimated time for power restoration.
