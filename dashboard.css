@@ -1,0 +1,278 @@
+:root {
+    --primary-color: #4f46e5;
+    --primary-hover: #4338ca;
+    --bg-color: #f3f4f6;
+    --card-bg: #ffffff;
+    --text-color: #1f2937;
+    --border-color: #d1d5db;
+    
+    /* Status Colors */
+    --status-outage-bg: #fef2f2;
+    --status-outage-text: #dc2626;
+    --status-progress-bg: #fefce8;
+    --status-progress-text: #ca8a04;
+    --status-restored-bg: #f0fdf4;
+    --status-restored-text: #16a34a;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    min-height: 100vh;
+}
+
+/* Header & Navbar */
+.navbar {
+    background-color: var(--card-bg);
+    padding: 16px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.brand-title {
+    color: var(--primary-color);
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.brand-tagline {
+    color: #6b7280;
+    font-size: 12px;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.user-avatar {
+    width: 38px;
+    height: 38px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.user-name {
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.btn-logout {
+    padding: 8px 16px;
+    background-color: transparent;
+    color: #ef4444;
+    border: 1px solid #ef4444;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-logout:hover {
+    background-color: #ef4444;
+    color: white;
+}
+
+/* Dashboard Main Layout */
+.dashboard-container {
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.welcome-section {
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    margin-bottom: 25px;
+}
+
+.welcome-section h2 {
+    color: var(--primary-color);
+    margin-bottom: 8px;
+}
+
+.welcome-section p {
+    color: #6b7280;
+}
+
+/* Search Area */
+.search-section {
+    margin-bottom: 30px;
+}
+
+.search-box {
+    display: flex;
+    gap: 15px;
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+.search-box .input-group {
+    flex: 1;
+    margin-bottom: 0;
+    position: relative;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    outline: none;
+    font-size: 16px;
+    transition: all 0.2s ease;
+}
+
+.input-group label {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #9ca3af;
+    pointer-events: none;
+    transition: all 0.2s ease;
+    background-color: var(--card-bg);
+    padding: 0 4px;
+}
+
+.input-group input:focus,
+.input-group input:not(:placeholder-shown) {
+    border-color: var(--primary-color);
+}
+
+.input-group input:focus ~ label,
+.input-group input:not(:placeholder-shown) ~ label {
+    top: 0;
+    font-size: 12px;
+    color: var(--primary-color);
+}
+
+.btn {
+    padding: 12px 24px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn:hover {
+    background-color: var(--primary-hover);
+}
+
+/* Outage Cards Section */
+.section-title {
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+.outage-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 20px;
+}
+
+.outage-card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+    border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.area-name {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+/* Status Badges */
+.status-badge {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.status-outage {
+    background-color: var(--status-outage-bg);
+    color: var(--status-outage-text);
+}
+
+.status-progress {
+    background-color: var(--status-progress-bg);
+    color: var(--status-progress-text);
+}
+
+.status-restored {
+    background-color: var(--status-restored-bg);
+    color: var(--status-restored-text);
+}
+
+.card-body p {
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #4b5563;
+}
+
+.card-body strong {
+    color: var(--text-color);
+}
+
+.no-results {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 40px;
+    background: var(--card-bg);
+    border-radius: 12px;
+    color: #6b7280;
+}
+
+/* Responsive Tweaks */
+@media (max-width: 640px) {
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
+    }
+    .user-profile {
+        width: 100%;
+        justify-content: space-between;
+    }
+    .search-box {
+        flex-direction: column;
+    }
+}

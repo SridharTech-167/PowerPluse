@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PowerPulse - Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <!-- Top Navigation Bar -->
+    <header class="navbar">
+        <div class="nav-brand">
+            <h1 class="brand-title">⚡ PowerPulse</h1>
+            <p class="brand-tagline">Stay informed. Stay connected.</p>
+        </div>
+        <div class="user-profile">
+            <div class="user-avatar">JD</div>
+            <span class="user-name" id="userNameDisplay">John Doe</span>
+            <button id="logoutBtn" class="btn-logout">Logout</button>
+        </div>
+    </header>
+
+    <main class="dashboard-container">
+        <!-- Welcome Banner Section -->
+        <section class="welcome-section">
+            <h2>Welcome to PowerPulse Dashboard</h2>
+            <p>Track live power outages, scheduled maintenance, and real-time restoration times in your area.</p>
+        </section>
+
+        <!-- Search Bar Area -->
+        <section class="search-section">
+            <form id="searchForm" class="search-box">
+                <div class="input-group">
+                    <input type="text" id="areaSearchInput" required placeholder=" ">
+                    <label for="areaSearchInput">Search area name (e.g., Downtown, North Suburb...)</label>
+                </div>
+                <button type="submit" class="btn btn-search">Search Area</button>
+            </form>
+        </section>
+
+        <!-- Dynamic Outage Status Cards Area -->
+        <section class="outage-section">
+            <h3 class="section-title">Power Outage Status Updates</h3>
+            <div id="outageGrid" class="outage-grid">
+                <!-- Cards will be populated by JavaScript -->
+            </div>
+        </section>
+    </main>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>
